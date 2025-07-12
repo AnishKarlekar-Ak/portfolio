@@ -32,7 +32,7 @@ const Hero = () => {
           <img
             src="/myImage.png"
             alt="Anish Karlekar"
-            className="w-[110%] h-[125%] object-cover rounded-b-full -mt-14"
+            className="w-[110%] h-[125%] object-cover rounded-b-full -mt-14.5"
           />
         </div>
       </div>
