@@ -1,6 +1,6 @@
-import React from 'react';
-import { Mail, Phone, Github, ExternalLink } from 'lucide-react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { Mail, Phone, Github, ExternalLink } from "lucide-react";
+import { motion } from "framer-motion";
 
 const contactItems = [
   {
@@ -25,72 +25,89 @@ const contactItems = [
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-20 px-4">
-      <div className="max-w-4xl mx-auto text-center">
-        {/* Heading */}
-        <motion.h2
-          className="text-4xl font-bold mb-8 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent"
+    <section
+      id="contact"
+      className="py-24 px-6 bg-[#0B1120] text-[#F8FAFC]"
+    >
+      <div className="max-w-5xl mx-auto text-center">
+
+        {/* Header */}
+        <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
+          className="mb-12"
         >
-          Let's Work Together
-        </motion.h2>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
+            Let’s Build Intelligent Systems
+          </h2>
+          <div className="w-24 h-[2px] bg-[#2563EB] mx-auto mt-4"></div>
 
-        {/* Intro */}
-        <motion.p
-          className="text-xl text-gray-300 mb-12"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          I'm always interested in new opportunities and exciting projects. 
-          Let's connect and build something amazing together!
-        </motion.p>
+          <p className="text-[#94A3B8] mt-6 text-lg max-w-2xl mx-auto">
+            Open to AI-first startups, SaaS platforms, and engineering teams
+            looking to build scalable full stack and LLM-powered systems.
+          </p>
+        </motion.div>
 
-        {/* Contact Methods */}
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
+        {/* Contact Cards */}
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
           {contactItems.map((item, index) => (
             <motion.a
               key={item.title}
               href={item.href}
               target={item.href.startsWith("http") ? "_blank" : "_self"}
               rel="noopener noreferrer"
-              className="bg-white/5 p-6 rounded-xl border border-white/10 hover:border-cyan-400/50 transition-all duration-300 transform hover:scale-105 group"
+              className="bg-[#111827] p-6 rounded-xl border border-[#1F2937]
+                         hover:border-[#2563EB]
+                         hover:shadow-[0_0_25px_rgba(6,182,212,0.15)]
+                         transition-all duration-300"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.15 }}
               viewport={{ once: true }}
             >
-              <item.icon className="text-cyan-400 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" size={32} />
-              <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-              <p className="text-gray-400">{item.value}</p>
+              <item.icon
+                className="text-[#2563EB] mx-auto mb-4"
+                size={28}
+              />
+              <h3 className="text-lg font-semibold mb-2">
+                {item.title}
+              </h3>
+              <p className="text-[#94A3B8] text-sm">
+                {item.value}
+              </p>
             </motion.a>
           ))}
         </div>
 
-        {/* Final CTA */}
+        {/* Final CTA Box */}
         <motion.div
-          className="bg-gradient-to-r from-cyan-500 to-purple-500 p-1 rounded-xl max-w-md mx-auto"
+          className="bg-[#111827] border border-[#1F2937] p-10 rounded-xl
+                     hover:border-[#2563EB]
+                     hover:shadow-[0_0_40px_rgba(6,182,212,0.15)]
+                     transition-all duration-300 max-w-2xl mx-auto"
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <div className="bg-slate-900 p-6 rounded-lg">
-            <p className="text-lg mb-4 text-white">Ready to start a project?</p>
-            <a
-              href="mailto:work.anishkarlekar@gmail.com"
-              className="bg-gradient-to-r from-cyan-500 to-purple-500 px-8 py-3 rounded-full inline-flex items-center gap-2 hover:scale-105 transition-transform duration-300"
-            >
-              <Mail size={20} />
-              Send Message
-              <ExternalLink size={16} />
-            </a>
-          </div>
+          <p className="text-xl mb-6">
+            Ready to architect something scalable and intelligent?
+          </p>
+
+          <a
+            href="mailto:work.anishkarlekar@gmail.com"
+            className="inline-flex items-center gap-2 bg-[#2563EB] text-white px-8 py-3 rounded-lg font-medium
+                       hover:translate-y-[-2px]
+                       hover:shadow-[0_0_30px_rgba(6,182,212,0.35)]
+                       transition-all duration-300"
+          >
+            Start a Conversation
+            <ExternalLink size={16} />
+          </a>
         </motion.div>
+
       </div>
     </section>
   );

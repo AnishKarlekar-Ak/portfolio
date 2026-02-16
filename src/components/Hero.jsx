@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { Mail, Github, ChevronDown } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { Github, ArrowRight, ChevronDown } from "lucide-react";
 
-const typingText = "Full Stack Development and Data Science Enthusiast";
+const typingText =
+  "AI & Full Stack Engineer • MERN • MEAN • Intelligent Systems";
 
 const Hero = () => {
   const [displayedText, setDisplayedText] = useState("");
@@ -12,68 +13,104 @@ const Hero = () => {
       const timeout = setTimeout(() => {
         setDisplayedText((prev) => prev + typingText[charIndex]);
         setCharIndex(charIndex + 1);
-      }, 50); // typing speed
+      }, 40);
       return () => clearTimeout(timeout);
     }
   }, [charIndex]);
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden pt-32">
-      <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 animate-pulse"></div>
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center px-6 relative overflow-hidden pt-32 bg-[#0B1120] text-[#F8FAFC]"
+    >
+      {/* Subtle Radial AI Glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(6,182,212,0.08),transparent_70%)]"></div>
 
-      <div className="text-center z-10 max-w-4xl mx-auto">
-  {/* Profile Image */}
-  <div className="relative mb-8 mt-8">
-    <div className="w-60 h-60 mx-auto relative z-10">
-      {/* Gradient Ring */}
-      <div className="w-full h-full rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 p-1 animate-spin-slow">
-        {/* Inner Circle with Image */}
-        <div className="w-full h-full rounded-full bg-slate-900 flex items-center justify-center overflow-visible relative">
-          <img
-            src="/myImage.png"
-            alt="Anish Karlekar"
-            className="w-[110%] h-[125%] object-cover rounded-b-full -mt-14.5"
-          />
+      <div className="text-center z-10 max-w-5xl mx-auto">
+
+        {/* Profile Image */}
+        <div className="relative mb-12 mt-8">
+          <div className="w-60 h-60 mx-auto relative z-10">
+
+            {/* Electric Blue Ring */}
+            <div className="w-full h-full rounded-full border border-[#2563EB] p-[3px] relative">
+
+              {/* Cyan Glow Behind */}
+              <div className="absolute inset-0 rounded-full bg-[#06B6D4]/10 blur-2xl -z-10"></div>
+
+              {/* Inner Circle */}
+              <div className="w-full h-full rounded-full bg-[#111827] flex items-center justify-center overflow-visible relative">
+
+                <img
+                  src="/myImage.png"
+                  alt="Anish Karlekar"
+                  className="w-[108%] h-[120%] object-cover rounded-b-full -mt-10"
+                />
+
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-
-
 
         {/* Name */}
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+        <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 relative z-20">
           Anish Karlekar
         </h1>
 
-        {/* Typing Text */}
-        <div className="text-xl md:text-2xl text-gray-300 mb-8 h-8">
+        {/* Typing Tagline */}
+        <div className="text-xl md:text-2xl text-[#94A3B8] mb-8 h-8 font-medium">
           {displayedText}
-          <span className="animate-blink">|</span>
+          <span className="text-[#2563EB] animate-pulse">|</span>
         </div>
 
-        {/* Bio */}
-        <p className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
-          Computer Science Engineering student passionate about full-stack development and data science. 
-          Building innovative solutions with modern technologies.
+        {/* Strategic Bio */}
+        <p className="text-lg text-[#94A3B8] mb-12 max-w-3xl mx-auto leading-relaxed">
+          I build scalable AI-powered web applications and high-performance backend
+          systems using Node.js, React, Angular, and modern API architectures.
+          Focused on designing production-ready solutions for startups and growing tech teams.
         </p>
 
-        {/* Buttons */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          <a href="mailto:work.anishkarlekar@gmail.com" className="flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105">
-            <Mail size={20} />
-            Get In Touch
+        {/* Authority Tags */}
+        <div className="flex flex-wrap justify-center gap-6 text-sm text-[#94A3B8] mb-12">
+          <span className="border border-[#1F2937] px-4 py-2 rounded-lg bg-[#111827] hover:border-[#2563EB] transition">
+            Scalable API Architecture
+          </span>
+          <span className="border border-[#1F2937] px-4 py-2 rounded-lg bg-[#111827] hover:border-[#2563EB] transition">
+            Agentic AI Integration
+          </span>
+          <span className="border border-[#1F2937] px-4 py-2 rounded-lg bg-[#111827] hover:border-[#2563EB] transition">
+            Performance Optimization
+          </span>
+        </div>
+
+        {/* CTA Buttons */}
+        <div className="flex flex-wrap justify-center gap-6 mb-16">
+
+          <a
+            href="#contact"
+            className="flex items-center gap-2 bg-[#2563EB] text-white px-8 py-3 rounded-lg font-medium hover:translate-y-[-2px] hover:shadow-[0_0_25px_rgba(6,182,212,0.35)] transition-all duration-300"
+          >
+            Let’s Build Something
+            <ArrowRight size={18} />
           </a>
-          <a href="https://github.com/AnishKarlekar-Ak" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 border border-gray-500 hover:border-cyan-400 px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105">
-            <Github size={20} />
+
+          <a
+            href="https://github.com/AnishKarlekar-Ak"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 border border-[#2563EB] text-[#F8FAFC] px-8 py-3 rounded-lg font-medium hover:bg-[#111827] hover:border-[#06B6D4] transition-all duration-300"
+          >
             View GitHub
+            <Github size={18} />
           </a>
+
         </div>
 
         {/* Scroll Indicator */}
         <div className="animate-bounce">
-          <ChevronDown size={32} className="mx-auto text-gray-400" />
+          <ChevronDown size={28} className="mx-auto text-[#94A3B8]" />
         </div>
+
       </div>
     </section>
   );
